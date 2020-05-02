@@ -1,4 +1,4 @@
-package com.example.cosmogallery.ui;
+package com.example.cosmogallery.ui.gallery;
 
 import com.example.cosmogallery.data.model.NasaApod;
 

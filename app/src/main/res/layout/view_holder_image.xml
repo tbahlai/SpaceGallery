@@ -8,10 +8,10 @@
     <data class="ItemImageBinding">
         <variable
             name="imageItem"
-            type="com.example.cosmogallery.ui.ListItemImageViewModel" />
+            type="com.example.cosmogallery.ui.gallery.ListItemImageViewModel" />
         <variable
             name="onItemClickListener"
-            type="com.example.cosmogallery.ui.GalleryAdapter.OnItemClickListener" />
+            type="com.example.cosmogallery.ui.gallery.GalleryAdapter.OnItemClickListener" />
     </data>
 
     <androidx.cardview.widget.CardView

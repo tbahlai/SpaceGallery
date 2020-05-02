@@ -14,14 +14,14 @@
         android:roundIcon="@mipmap/ic_app_cosmo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.GalleryActivity">
+        <activity android:name=".ui.gallery.GalleryActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.PhotoActivity"
+        <activity android:name=".ui.photo.PhotoActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar"/>
     </application>
 

@@ -9,7 +9,7 @@
             type="android.view.View"/>
         <variable
             name="vm"
-            type="com.example.cosmogallery.ui.GalleryViewModel" />
+            type="com.example.cosmogallery.ui.gallery.GalleryViewModel" />
     </data>
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
@@ -32,7 +32,7 @@
                 bind:data="@{vm.photos}"
                 bind:clickHandler="@{vm.onItemClickListener}"
                 android:visibility="@{vm.isErrorVisible ? view.GONE : view.VISIBLE}"
-                tools:context=".ui.GalleryActivity" />
+                tools:context=".ui.gallery.GalleryActivity" />
 
             <include
                 layout="@layout/view_error"

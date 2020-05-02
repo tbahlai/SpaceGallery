@@ -1,4 +1,4 @@
-package com.example.cosmogallery.ui;
+package com.example.cosmogallery.ui.photo;
 
 import android.Manifest;
 import android.app.AlertDialog;
@@ -28,6 +28,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import com.example.cosmogallery.R;
+import com.example.cosmogallery.ui.gallery.GalleryActivity;
 import com.github.chrisbanes.photoview.PhotoView;
 import com.google.android.material.snackbar.Snackbar;
 import com.squareup.picasso.NetworkPolicy;
@@ -194,7 +195,7 @@ public class PhotoActivity extends AppCompatActivity {
         if (grantResults.length != 2) return;
         if (grantResults[0] == PackageManager.PERMISSION_GRANTED
                 && grantResults[1] == PackageManager.PERMISSION_GRANTED) {
-               shareImage();
+            shareImage();
         } else {
             new AlertDialog.Builder(this)
                     .setMessage(R.string.give_permission)
@@ -202,5 +203,4 @@ public class PhotoActivity extends AppCompatActivity {
                     .show();
         }
     }
-
 }

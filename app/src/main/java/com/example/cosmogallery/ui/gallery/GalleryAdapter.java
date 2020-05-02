@@ -1,17 +1,14 @@
-package com.example.cosmogallery.ui;
+package com.example.cosmogallery.ui.gallery;
 
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.cosmogallery.R;
 import com.example.cosmogallery.data.model.NasaApod;
 import com.example.cosmogallery.databinding.ItemImageBinding;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class GalleryAdapter extends RecyclerView.Adapter<GalleryViewHolder> {
