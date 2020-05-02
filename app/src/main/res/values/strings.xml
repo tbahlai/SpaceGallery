@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">SpaceGallery</string>
+    <string name="wallpaper">wallpaper</string>
+    <string name="download">download</string>
+    <string name="share">share</string>
+    <string name="error_loading">Data loading error</string>
+    <string name="wallpaper_set">Wallpaper set!</string>
+    <string name="error">Error!</string>
+    <string name="wait">Please wait..</string>
+    <string name="no_permission">Impossible download image without permission</string>
+    <string name="give_permission">Please, give permission in settings</string>
+</resources>
