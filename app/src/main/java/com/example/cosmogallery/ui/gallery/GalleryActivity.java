@@ -1,11 +1,14 @@
 package com.example.cosmogallery.ui.gallery;
 
+import android.app.ActivityOptions;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.os.PersistableBundle;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.LiveData;
@@ -32,6 +35,7 @@ public class GalleryActivity extends AppCompatActivity {
         intent.putExtra(PHOTO_URL, url);
         intent.putExtra(PHOTO_TITLE, title);
         startActivity(intent);
+        overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
     };
 
     @Override

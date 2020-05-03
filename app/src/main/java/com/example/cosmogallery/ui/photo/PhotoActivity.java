@@ -203,4 +203,10 @@ public class PhotoActivity extends AppCompatActivity {
                     .show();
         }
     }
+
+//    @Override
+//    protected void onDestroy() {
+//        super.onDestroy();
+//        overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
+//    }
 }
