@@ -1,13 +1,5 @@
 package com.example.cosmogallery.ui.gallery;
 
-import android.os.Bundle;
-import android.os.Parcel;
-import android.os.Parcelable;
-import android.util.MutableBoolean;
-
-import androidx.databinding.ObservableArrayList;
-import androidx.databinding.ObservableBoolean;
-import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
@@ -25,9 +17,7 @@ import io.reactivex.schedulers.Schedulers;
 
 public class GalleryViewModel extends ViewModel {
 
-    private static final int COUNT_IMAGE = 40;
-
-    private static final String DATA = "data";
+    private static final int COUNT_IMAGE = 50;
 
     private CompositeDisposable disposable = new CompositeDisposable();
     private GalleryAdapter.OnItemClickListener onItemClickListener;
@@ -44,7 +34,7 @@ public class GalleryViewModel extends ViewModel {
         loadPhotos();
     }
 
-    private void loadPhotos() {
+    public void loadPhotos() {
         disposable.add(ApiUtils.getNasaApi().getApodCountPhotos(BuildConfig.API_KEY, COUNT_IMAGE, true)
                 .observeOn(AndroidSchedulers.mainThread())
                 .doOnSubscribe(disposable1 -> isLoading.postValue(true))
@@ -69,10 +59,6 @@ public class GalleryViewModel extends ViewModel {
         return onItemClickListener;
     }
 
-//    public ObservableBoolean getIsErrorVisible() {
-//        return isErrorVisible;
-//    }
-
     public MutableLiveData<List<NasaApod>> getPhotos() {
         return photos;
     }
@@ -85,13 +71,9 @@ public class GalleryViewModel extends ViewModel {
         return isLoading;
     }
 
-
-    //    public ObservableBoolean getIsLoading() {
-//        return isLoading;
-//    }
-
     public SwipeRefreshLayout.OnRefreshListener getRefreshListener() {
         return refreshListener;
     }
+
 
 }

@@ -22,13 +22,12 @@
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycler_view"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:animationCache="true"
                 bind:data="@{vm.photos}"
                 bind:clickHandler="@{vm.onItemClickListener}"
                 android:visibility="@{vm.isErrorVisible ? view.GONE : view.VISIBLE}"

@@ -16,23 +16,15 @@ public class GalleryAdapter extends RecyclerView.Adapter<GalleryViewHolder> {
     private List<NasaApod> nasaApods;
     private OnItemClickListener onItemClickListener;
 
-    //
     public GalleryAdapter(List<NasaApod> nasaApods, OnItemClickListener onItemClickListener) {
         this.nasaApods = nasaApods;
         this.onItemClickListener = onItemClickListener;
     }
 
-//    public void setPhotos(List<NasaApod> nasaApods) {
-//        this.nasaApods.clear();
-//        this.nasaApods.addAll(nasaApods);
-//        notifyDataSetChanged();
-//    }
-
     @NonNull
     @Override
     public GalleryViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-//        View view = inflater.inflate(R.layout.view_holder_image, parent, false);
         ItemImageBinding binding = ItemImageBinding.inflate(inflater, parent, false);
         return new GalleryViewHolder(binding);
     }
@@ -43,11 +35,19 @@ public class GalleryAdapter extends RecyclerView.Adapter<GalleryViewHolder> {
     }
 
     @Override
+    public void onViewAttachedToWindow(@NonNull GalleryViewHolder holder) {
+        super.onViewAttachedToWindow(holder);
+        int layoutPosition = holder.getLayoutPosition();
+        if (layoutPosition == 40) {
+            holder.bind(nasaApods.get(layoutPosition), onItemClickListener);
+        }
+    }
+
+    @Override
     public int getItemCount() {
         return nasaApods.size();
     }
 
-    //
     public interface OnItemClickListener {
         void onItemClick(String url, String title);
     }

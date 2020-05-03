@@ -16,7 +16,6 @@ public class GalleryViewHolder extends RecyclerView.ViewHolder {
     }
 
     public void bind(NasaApod photo, GalleryAdapter.OnItemClickListener listener) {
-
         binding.setImageItem(new ListItemImageViewModel(photo));
         binding.setOnItemClickListener(listener);
         binding.executePendingBindings();

@@ -27,8 +27,6 @@ public class GalleryActivity extends AppCompatActivity {
     public static final String PHOTO_URL = "com.example.cosmogallery.ui.NASA_PHOTO_URL";
     public static final String PHOTO_TITLE = "com.example.cosmogallery.ui.PHOTO_TITLE";
 
-    private GalleryViewModel galleryViewModel;
-
     private GalleryAdapter.OnItemClickListener itemClickListener = (url, title) -> {
         Intent intent = new Intent(GalleryActivity.this, PhotoActivity.class);
         intent.putExtra(PHOTO_URL, url);
@@ -39,12 +37,10 @@ public class GalleryActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         CustomFactory factory = new CustomFactory(itemClickListener);
-        galleryViewModel = ViewModelProviders.of(this, factory).get(GalleryViewModel.class);
+        GalleryViewModel galleryViewModel = ViewModelProviders.of(this, factory).get(GalleryViewModel.class);
         GalleryBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_gallery);
         binding.setVm(galleryViewModel);
         binding.setLifecycleOwner(this);
-
     }
 }
